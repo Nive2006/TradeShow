@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>docs</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Montserrat:ital,wght@0,500;1,500&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tilt+Neon&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="whole-container">  
+        <section class="nav-container" id="nav">
+            <div>
+                <img class="logo" src="reqImgs/logo.svg" alt="">
+            </div>
+           
+            <div class="nav-bar">
+                <ul class="ul">
+                    <a class="nav Highlight" id="home" href="#lp">Home</a>
+                    <a class="nav" id="Setup" href="#setup">Setup</a>
+                    <a class="nav" id="Tags" href="#tags">Tags</a>
+                    <a class="nav" id="About" href="#about">About</a>
+                    <a class="nav" id="Contact" href="#contact">Contact</a>
+                </ul>
+            </div>
+
+            <div class="info">
+               <p class="version">version 1.0</p>
+            </div>
+        </section>
+        <section class="landing-page" id="lp">
+            <div class="project-description">
+                <h1>Your Go-to-Library for HTML tags</h1>
+                <p>Say goodbye to the tedious work of writing html tags. Our comprehensive guide<br>provides you with all the custom HTML tags you’ll ever need for your web development.</p>
+                <a href="#setup" class="button">GET STARTED</a>    
+            </div>
+
+            <div class="illustrations">
+                <img src="reqImgs/HomeIllustration.svg" alt="" height="1000px" width="700px">
+            </div>
+
+            <div class="bubbles">
+                <img src="reqImgs/bell.svg" alt="">
+                <img src="reqImgs/News Letter.svg" alt="">
+                <img src="reqImgs/Click Button.svg" alt="">
+                <img src="reqImgs/Toggle.svg" alt="">
+                <img src="reqImgs/goToTop.svg" alt="">
+                <img src="reqImgs/Card.svg" alt="">
+            </div>
+        </section>
+        
+
+        <section class="Elements-container">
+            <section class="Setup" id="setup">
+            <div class="download-content">
+                <h1>Download the File Now<span>(which is available below the description.)</span></h1>
+                <p>After installing the library. link the 'EasyTags.js' file in your HTML document using the following code:</p>
+                <img src="reqImgs/scriptImage.png">
+                <ul>
+                    <li>Make sure to place this code at the end of your HTML document.</li>
+                    <li> Ensure that all your working JavaScript files are linked above the tag that links to 'EasyTags.js'.</li>
+                    <li>Once you have done this, you can start working and use our tags.</li>
+                    <li>Refer to the EasyTags documentation for detailed information on available tags, usage examples, and advanced features.</li>
+                    <li> The documentation serves as a comprehensive guide to help you make the most of EasyTags in your projects.</li>
+                </ul>
+               <a class="gotag" href="#tags">GO TO TAGS</a>
+               <a href="EasyTags.js" class="clickDownload" download="EasyTags" target="_blank">CLICK TO DOWNLOAD</a>
+            </div>
+            <img class="downloadIlls" src="reqImgs/setupIllustration.svg" alt="">
+            </section>
+
+            <section class="Tags" id="tags"> 
+                <div class="tags-left">
+                    <ul class="tag-container">
+                        <li id="e0" onclick="showDescription(0)">Num Counter</li>
+                        <li id="e1" onclick="showDescription(1)">Status Bar</li>
+                        <li id="e2" onclick="showDescription(2)">Highlight</li>
+                        <li id="e3" onclick="showDescription(3)">Go To Top</li>
+                        <li id="e4" onclick="showDescription(4)">Toggle Btn</li>
+                        <li id="e5" onclick="showDescription(5)">Screen View</li>
+                        <li id="e6" onclick="showDescription(6)">Nav Bar</li>
+                        <li id="e7" onclick="showDescription(7)">My Card</li>
+                        <li id="e8" onclick="showDescription(8)">Footer</li>
+                        <li id="e9" onclick="showDescription(9)">My Button</li>
+                        <li id="e10" onclick="showDescription(10)">My Alert</li>
+                        <li id="e11" onclick="showDescription(11)">FAQ</li>
+                        <li id="e12" onclick="showDescription(12)">News Letter</li>
+                        <li id="e13" onclick="showDescription(13)">Project Card</li>
+                        <li id="e14" onclick="showDescription(14)">Star Rating</li>
+                        <li id="e15" onclick="showDescription(15)">Search Bar</li>
+                      </ul>
+                </div>
+
+                <div class="description-container">
+
+
+                </div>
+            </section>
+
+                
+            <section class="About" id="about">
+                <div class="aboutContainer">
+                    <div class="aboutDescription">
+                        <div class="about-content">
+                            <h1>
+                                About Our Team :
+                            </h1>
+                            <p>
+                                Inspired by a talk given by our colleague Harish V on the topic” Web components” we wanted to create our version of HTML tags that would require the user to type less code and get more output .Our initial plan was to work on just 2 tags which turned out exactly the way we were expecting. As, a result we have worked on 10+tags with examples and descriptions for user comprehension.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="aboutTitle">
+                        Special Thanks to our Team Members!
+                    </div>
+                    <div class="profile-container">
+                        <div class="nivetha">
+                            <img class="ourImage" src="reqImgs/Nivetha.jpeg" alt="">
+                            <div class="ourContent">
+                                <h1>NIVETHA SRI S N</h1>
+                                <p>Zoho Schools of Technology</p>
+                                <p>Frontend Developer</p>
+
+                            </div>
+                        </div>
+                        <div class="jeeva">
+                            <img class="ourImage" src="reqImgs/jeeva.jpeg" alt="">
+                            <div class="ourContent">
+                                <h1>JEEVA NITHISH</h1>
+                                <p>Zoho Schools of Technology</p>
+                                <p>Frontend Developer</p>
+
+                            </div>
+                        </div>
+                        <div class="sriram">
+                            <img class="ourImage" src="reqImgs/sriram.jpg" alt="">
+                            <div class="ourContent">
+                                <h1>SRI RAM</h1>
+                                <p>Zoho Schools of Technology</p>
+                                <p>Frontend Developer</p>
+
+                            </div>
+                        </div>
+                        <div class="aravind">
+                            <img class="ourImage" src="reqImgs/Aravind.jpeg" alt="">
+                            <div class="ourContent">
+                                <h1>ARAVIND KUMAR</h1>
+                                <p>Zoho Schools of Technology</p>
+                                <p>Frontend Developer</p>
+
+                            </div>
+                        </div>
+                        <div class="varshan">
+                            <img class="ourImage" src="reqImgs/varshan.JPG" alt="">
+                            <div class="ourContent">
+                                <h1>SRI VARSHAN</h1>
+                                <p>Zoho Schools of Technology</p>
+                                <p>Frontend Developer</p>
+
+                            </div>
+                        </div>
+                        <div class="sania">
+                            <img class="ourImage" src="reqImgs/sania.jpg" alt="">
+                            <div class="ourContent">
+                                <h1>SANIA</h1>
+                                <p>Zoho Schools of Business</p>
+                                <p>Content Writing</p>
+
+                            </div>
+                        </div>
+                        <div class="afrana">
+                            <img class="ourImage" src="reqImgs/afrana.jpg" alt="">
+                            <div class="ourContent">
+                                <h1>AFRANA</h1>
+                                <p>Zoho Schools of Design</p>
+                                <p>Designer</p>
+
+                            </div>
+                        </div>
+                        <div class="mohammed">
+                            <img class="ourImage" src="reqImgs/mohammed.png" alt="">
+                            <div class="ourContent">
+                                <h1>Mohamed Ikshanullah R</h1>
+                                <p>Zoho Schools of Design</p>
+                                <p>Designer</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </section>
+        
+
+            <section class="Contact" id="contact">
+                <div class="contactDiv">
+                    <div class="contactParent">
+                        <div class="contactFirstChild">
+                            <img src="reqImgs/image 2.png" alt="">
+                        </div>
+                        <div class="contactSecondChild">
+                            <h1>Address</h1>
+                            <div class="addressContent">
+                                <div class="add"><img src="reqImgs/location.svg" alt=""><p>Estancia IT Park,Vallancherry Plot No:140 & 151, Grand Southern Trunk Road, Vallancherry, Taluk, Chengalpattu, Tamil Nadu 603202</p> </div>
+                                <div class="add"><img src="reqImgs/Phone.svg" alt=""><p>3440493950</p> </div>
+                                <div class="add"><img src="reqImgs/mail.svg" alt=""><p>abcd@gmail.com</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+
+            </section>
+
+        </section>
+    </section>
+</body>
+<script src="tagcontent.js"></script>
+<script src="script.js"></script>
+
+</html>
