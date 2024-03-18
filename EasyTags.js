@@ -356,62 +356,226 @@ customElements.define("toggle-btn", ToggleBtn);
 
 
 
-//. #6 <screen-view img="man.png" bg="pink"></screen-view>
+//. #6     <screen-view title="Welcome to ZS TradeShow" desc="A MEANINGFUL ALTERNATIVE TO CONVENTIONAL COLLEGE EDUCATION" link="https://www.zohoschools.com/" image1="happy-classmates-running-school-after-lessons_651396-1363.jpg" image2="header-bg.png" backgroundImage="bg.jpg" linkContent="More" ></screen-view>
+    </section>
 
-class ScreenView extends HTMLElement {
-  constructor() {
-    super();
-    this.attachShadow({ mode: 'open' });
+
+class ScreenView extends HTMLElement{
+  constructor(){
+      super();
+      this.attachShadow({mode:'open'});
   }
-  connectedCallback() {
 
-    let img = this.getAttribute("img");
-    let bg = this.getAttribute("bg");
-    let section = document.createElement('section');
-    section.setAttribute('class', 'sec-one');
-    let secondSection = document.createElement('section');
-    secondSection.setAttribute('class', 'sec-two');
+  connectedCallback(){
+    const title=this.getAttribute('title') || "Welcome To Our Website";
+    const description= this.getAttribute('desc') || "Thank You For Choosing Our Website";
+    const link = this.getAttribute('link') || "#";
+    const image1 = this.getAttribute('image1') || "https://img.freepik.com/free-photo/happy-classmates-running-school-after-lessons_651396-1363.jpg?t=st=1709888868~exp=1709892468~hmac=20c1dde7dbf0d73f2042ccc55ae098170042f34d01305b1bbd0def1a318b87df&w=1380";
+    const image2 = this.getAttribute('image2') || "https://as1.ftcdn.net/v2/jpg/01/90/25/26/1000_F_190252657_Ccach53OK724G9TdLDv0uPbRwk19OMeR.jpg";
+    const bgImage= this.getAttribute('backgroundImage') || "https://t3.ftcdn.net/jpg/03/17/76/14/360_F_317761488_lUO7Enkcskj6wppf9Ycf5zck5Jm2Y2b9.jpg";
+    const linkContent=this.getAttribute('linkContent') || "More";
 
 
+      let template=document.createElement('template');
+      template.innerHTML= `
+      <section class="firstPage">
+        <div class="container_grid">
+          <div class="container__image">
+            <div></div>
+          </div>
+          <div class="container__content">
+            <h1>${title}</h1>
+            <h2>${description}</h2>
+            <button class="button"><a href='${link}' target="_blank" class="aTag">${linkContent}</a></button>
+            <div class="round"></div>
+          </div>
+        </div>
+      </section>
+      
+      <style>
+      *{
+          margin:0;
+          padding:0;
+          box-sizing:border-box;
+         overflow:hidden;
 
-
-    function ifElse() {
-      if (!bg) {
-        bg = "rgb(0, 76, 76)";
       }
-    }
-    ifElse();
+      .firstPage{
+          // height: 100vh; 
+          background-image: linear-gradient(rgba(255,255,255,0.4), rgba(0,0,0, 0.8)),url(${bgImage});
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          // width:100vw;
+      }
 
-    let styles = `<style>
+      .container_grid{
+        height: 100vh;
+        max-width: 1400px;
+        margin: auto;
+        padding: 2rem 1rem;
+        // padding-top: 15rem;
+        display: grid;
+      }
+      container__image{
+        width:fit-content;
+        height:fit-content;
+        padding:0;
+
+      }
+
+      .container__image > div {
+        width: 100%;
+        max-width: 600px;
+        aspect-ratio: 1;
+        margin: auto;
+        background-image: url(${image1});
+        background-position: center ;
+        background-size: cover;
+        -webkit-mask: url(${image2});
+        -webkit-mask-size: cover;
+        -webkit-mask-position: center center;
+      }
 
 
-    .sec-one {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      background-image: url(${img});
-      background-size: cover;
-      background-position: center;
-      z-index: -2;
-    }
 
-    .sec-two {
-      width: 100%;
-      height: 100vh;
-      background-color: ${bg};
-      opacity : 0.5;
-      z-index: -1;
-    }
-    </style>`;
-    this.shadowRoot.innerHTML += styles;
-    this.shadowRoot.appendChild(section);
-    this.shadowRoot.appendChild(secondSection);
+      .container__content {
+        text-align: center;
+      }
+
+      .container__content h1 {
+        font-size: 5rem;
+        font-weight: 600;
+        color: orange;
+        padding-bottom: 2rem;
+      }
+
+      .container__content h2 {
+        margin-inline: auto;
+        margin-bottom: 1rem;
+        max-width: 450px;
+        font-size: 2rem;
+        font-weight: 400;
+        color: white;
+        font-family: "EB Garamond", serif;
+
+      }
+
+
+      .button {
+        padding: 10px 25px;
+        margin: auto;
+        letter-spacing: 0.5px;
+        position: relative;
+        border-radius: 30px;
+        background-color: rgba(255,255,255,0.4);
+        border: none;
+        overflow: hidden;
+        font-size: 1.5rem;
+        color: black;
+        transition: transform 0.3s;
+        cursor: pointer;
+        font-weight:700;
+        border:1px solid rgba(255,255,255,0.4);
+      }
+
+      .aTag{
+        text-decoration:none;
+        color:rgba(0,0,0,0.7);
+      }
+      .button:hover {
+        transform: scale(1.05);
+      }
+
+      .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: #fff;
+        transform: scale(0);
+        animation: rippleEffect 1s linear;
+      }
+
+      @media screen and (min-width: 768px) {
+        .container_grid {
+          padding-top: 2rem;
+          grid-template-columns: repeat(2, 1fr);
+          align-items: center;
+        }
+
+        .container__image {
+          grid-area: 1/2/2/3;
+        }
+
+        .container__content {
+          text-align: left;
+        }
+
+        .container__content :is(h2, p) {
+          margin-inline: unset;
+        }
+
+
+
+      }
+
+      @media screen and (max-width: 768px) {
+        .container__image > div{
+            height:400px;
+            width:400px;
+          }
+          .container__content h1{
+            font-size:3rem;
+
+          }
+          .container__content h2{
+            font-size:1.5rem;
+          }
+      }
+
+
+
+      @keyframes rippleEffect {
+        to {
+          transform: scale(4);
+          opacity: 0;
+        }
+      }
+
+      </style>
+      `
+      this.shadowRoot.appendChild(template.content.cloneNode(true));
+
+      const button = this.shadowRoot.querySelector('.button');
+      button.addEventListener('click', this.createRipple.bind(this));
   }
+
+createRipple(event) {
+  const button = event.currentTarget;
+  const ripple = document.createElement('span');
+  const diameter = Math.max(button.clientWidth, button.clientHeight);
+  const radius = diameter / 2;
+
+  ripple.style.width = ripple.style.height = `${diameter}px`;
+  ripple.style.left = `${event.clientX - button.getBoundingClientRect().left - radius}px`;
+  ripple.style.top = `${event.clientY - button.getBoundingClientRect().top - radius}px`;
+  
+  ripple.classList.add('ripple');
+
+  const rippleContainer = button.querySelector('.ripple');
+  if (rippleContainer) {
+    button.removeChild(rippleContainer);
+  }
+
+  button.appendChild(ripple);
+
+  setTimeout(() => {
+    ripple.remove();
+  }, 1000);
+}
 }
 
-customElements.define("screen-view", ScreenView);
+customElements.define('screen-view', ScreenView);
+
 
 
 // #7) <nav-bar tags="Home About Services Contact"  navBarlogo="650-6503651_navbar-logo-hd-png-download-removebg-preview.png" link="" bgColor="#FFE4C9"></nav-bar>
